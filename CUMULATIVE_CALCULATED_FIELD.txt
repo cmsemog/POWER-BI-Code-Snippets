@@ -1,0 +1,13 @@
+Cumulative_Value_Calculated_Field= 
+
+//reference the row's date
+var row_date = table_name[date_field] 
+
+//sum all records that have come before this record
+var res = sumx(filter(all(table_name), table_name[date_field]<=row_date), table_name[value_field])
+
+return res
+
+//replace date_field with the date field you want to compare on
+//replace table_name with the table you are using
+//replace value_field with what you are adding up
