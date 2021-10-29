@@ -1,0 +1,10 @@
+YTD Total = 
+var dt = SELECTEDVALUE(CashOnHand[Date])
+//CashOnHand is the table
+var y = year(dt)
+//capture the year
+return
+  CALCULATE(sum(CashOnHand[Cash Earned/Lost]), 
+    CashOnHand[Date] <= dt 
+    && year(CashOnHand[Date]) = y
+)
